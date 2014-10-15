@@ -11,15 +11,34 @@ struct Nameval
 Nameval *symtab[NHASH];
 
 
-
-enum {MULTIPLIER = 31}
+//this is a version for a string
+enum {MULTIPLIER = 31};
 unsigned hash(char *name)
 {
 	unsigned int h;
 	unsigned char *p;
 
-	for(p = (unsigned char *)str; p != NULL; p++)
-		h = h * MULTIPLIER + p;
+	for(p = (unsigned char *)str; *p != '\0'; p++)
+		h = h * MULTIPLIER + *p;
+
+	return h % NHASH;
+}
+
+
+//this is a version for string array
+enum { NPREF = 2};
+unsigned int hash(char *s[NPREF])
+{
+	unsigned int h;
+	unsigned char *p;
+	int i;
+
+	h = 0; 
+	for(i = 0; i < NPREF; i++)
+	{
+		for(p = (unsigned char *)s[i]; *p != '\0';p++)
+			h = h * MULTIPLIER + *p;
+	}
 
 	return h % NHASH;
 }
