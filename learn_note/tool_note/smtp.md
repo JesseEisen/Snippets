@@ -29,7 +29,7 @@ here is the config file context:
 
 		UseSTARTTLS=YES
 		AuthUser=lkchan0719@gmail.com
-		AuthPass=clk123456,
+		AuthPass=xxxxx
 
 	# Are users allowed to set their own From: address?
 	# YES - Allow the user to specify their own From: address
