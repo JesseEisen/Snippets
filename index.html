@@ -30,6 +30,7 @@
     <h1>Code Snippets</h1>
  </div>
 
+<div class="card card-1"> <p><h2>Check If A File Contains An Image</h2></p> <p class="abstrcat">Use grep, Check With https://en.wikipedia.org/wiki/List_of_file_signatures</p> <p class="showcodes"><a class="clicks" href="#" onclick="showdiv(this);return false;">show code</a></p> <div class="sourcecode"> <pre><code class="Bash" >grep -a -o -e $'GIF8' -e $'ÿØÿ' -e $'‰PNG' filename </code></pre> <div class="btm"> <a href="#" class="btn" onclick="hidediv(this);">Hide code</a> </div></div></div>
 <div class="card card-1"> <p><h2>Shell Append Line By Sed</h2></p> <p class="abstrcat">Use sed to append command to insert corresponed line into file</p> <p class="showcodes"><a class="clicks" href="#" onclick="showdiv(this);return false;">show code</a></p> <div class="sourcecode"> <pre><code class="Bash" >function CreateNewDay()
 {
 	LineNo=`grep -n content index.html |head -1| cut -b 1,2`
