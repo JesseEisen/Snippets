@@ -3,11 +3,10 @@
 #sed -i 's/"/\"/g' codes
 
 summary=$(sed -n '1p' codes)
-#echo "$summary"
 types=$(sed -n '2p' codes)
 abstract=$(sed -n '3,4p' codes)
 Rcode=$(sed -n '6,$p' codes)
-Icode=$(echo "$Rcode" | sed -n 's/$/&\\/g')
+Icode=$(echo "$Rcode" | sed  's/$/&\\/g')
 lineNo=`grep -n card-1 index.html | head -1|cut -b 1,2`
 
 card="<div class=\"card card-1\"> \
@@ -22,6 +21,5 @@ card="<div class=\"card card-1\"> \
 </div>\
 </div>"
 
-echo "$card"
 sed -i "$lineNo i${card}" index.html
 echo "done"
