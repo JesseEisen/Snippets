@@ -4,9 +4,10 @@
 
 summary=$(sed -n '1p' codes)
 types=$(sed -n '2p' codes)
-abstract=$(sed -n '3,4p' codes)
+rabstract=$(sed -n '3,4p' codes)
+abstract=$(sed 's/$/&\\/g' <<< "$rabstract")
 Rcode=$(sed -n '6,$p' codes)
-Icode=$(echo "$Rcode" | sed  's/$/&\\/g')
+Icode=$(sed  's/$/&\\/g' <<< "$Rcode")
 lineNo=`grep -n card-1 index.html | head -1|cut -b 1,2`
 
 card="<div class=\"card card-1\"> \

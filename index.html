@@ -30,6 +30,16 @@
     <h1>Code Snippets</h1>
  </div>
 
+<div class="card card-1"> <p><h2>Obtain a pointer to the struct that contains the struct member</h2></p> <p class="abstrcat">Check this link for more detail: 
+	<a href="http://radek.io/2012/11/10/magical-container_of-macro">The Magical container_of() Macro</a></p> <p class="showcodes"><a class="clicks" href="#" onclick="showdiv(this);return false;">show code</a></p> <div class="sourcecode"> <pre><code class="C" >#ifndef container_of
+#include <stddef.h>
+#define container_of(ptr, type, member) ({ 
+		const typeof( ((type*)0)->member ) 
+		* __mptr = ((void*)(ptr)); 
+		(type*)( (char*)__mptr - 
+				offsetof(type, member) ); 
+		})
+#endif</code></pre> <div class="btm"> <a href="#" class="btn" onclick="hidediv(this);">Hide code</a> </div></div></div>
 <div class="card card-1"> <p><h2>Check If A File Contains An Image</h2></p> <p class="abstrcat">Use grep, Check With https://en.wikipedia.org/wiki/List_of_file_signatures</p> <p class="showcodes"><a class="clicks" href="#" onclick="showdiv(this);return false;">show code</a></p> <div class="sourcecode"> <pre><code class="Bash" >grep -a -o -e $'GIF8' -e $'\xFF\xD8\xFF' -e $'\x89PNG' filename  </code></pre> <div class="btm"> <a href="#" class="btn" onclick="hidediv(this);">Hide code</a> </div></div></div>
 <div class="card card-1"> <p><h2>Shell Append Line By Sed</h2></p> <p class="abstrcat">Use sed to append command to insert corresponed line into file</p> <p class="showcodes"><a class="clicks" href="#" onclick="showdiv(this);return false;">show code</a></p> <div class="sourcecode"> <pre><code class="Bash" >function CreateNewDay()
 {
